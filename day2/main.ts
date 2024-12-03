@@ -29,9 +29,8 @@ const isLevelSafe = (list: number[], tolerance: number) => {
         }
 
         //Delete the element from arr and also decrease i to re-run
-        delete list[i--]
-        list = list.filter(l => l != undefined)
-
+        delete list[i--];
+        list = list.filter((l) => l != undefined);
       }
     } else {
       if (!(list[i] > list[i + 1] && (list[i] - list[i + 1]) <= 3)) {
@@ -46,8 +45,8 @@ const isLevelSafe = (list: number[], tolerance: number) => {
           return false;
         }
         //Delete the element from arr and also decrease i to re-run
-        delete list[i--]
-        list = list.filter(l => l != undefined)
+        delete list[i--];
+        list = list.filter((l) => l != undefined);
       }
     }
   }
@@ -60,7 +59,7 @@ const solution1 = () => {
   let safe = 0;
 
   reports.forEach((rep) => {
-    let nums = rep.split(" ").map((num) => Number.parseInt(num));
+    const nums = rep.split(" ").map((num) => Number.parseInt(num));
     if (isLevelSafe(nums, 0)) {
       safe++;
     }
@@ -76,8 +75,8 @@ const solution2 = () => {
   let safe = 0;
 
   reports.forEach((rep) => {
-    let nums = rep.split(" ").map((num) => Number.parseInt(num));
-    if (isLevelSafe(nums, 1)) {
+    const nums = rep.split(" ").map((num) => Number.parseInt(num));
+    if (isLevelSafe(nums, 2)) {
       safe++;
     }
   });
